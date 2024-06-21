@@ -1,17 +1,24 @@
-// scripts.js
-
+// script.js
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    const accordionItems = document.querySelectorAll('.accordion-item');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
+    accordionItems.forEach(item => {
+        const button = item.querySelector('.accordion-button');
 
-        question.addEventListener('click', function() {
-            const isVisible = answer.style.display === 'block';
-            answer.style.display = isVisible ? 'none' : 'block';
-            item.style.transition = 'transform 0.5s ease';
-            item.style.transform = isVisible ? 'rotateX(0)' : 'rotateX(10deg)'; /* Newspaper opening effect */
+        button.addEventListener('click', () => {
+            const content = item.querySelector('.accordion-content');
+            const icon = button.querySelector('.icon');
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                button.classList.remove('active');
+            } else {
+                document.querySelectorAll('.accordion-content').forEach(content => content.style.maxHeight = null);
+                document.querySelectorAll('.accordion-button').forEach(button => button.classList.remove('active'));
+
+                content.style.maxHeight = content.scrollHeight + 'px';
+                button.classList.add('active');
+            }
         });
     });
 });
