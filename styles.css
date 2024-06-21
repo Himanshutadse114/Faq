@@ -1,74 +1,83 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    padding: 20px;
-}
-
-/* FAQ Container styles */
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #333; /* Dark gray background for 3D effect */
-    padding: 20px;
-    border-radius: 12px; /* Slightly more rounded corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 
-                0 6px 6px rgba(0, 0, 0, 0.2); /* Stronger shadow for 3D effect */
-    border: 1px solid #444; /* Adding a border for a more defined look */
-    color: #fff; /* White text color for better contrast */
-}
-
-/* Heading styles */
-.faq-container h1 {
     font-family: 'Play', sans-serif;
-    font-size: 28px;
-    margin-bottom: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.faq-section {
+    max-width: 1200px;
+    margin: auto;
     text-align: center;
+    background-color: #e0e0e0; /* Light gray background color for the container */
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* FAQ Item styles */
-.faq-item {
+.faq-section h1 {
     margin-bottom: 20px;
-    overflow: hidden; /* Ensure the slide-down effect is smooth */
+    color: #333;
 }
 
-/* Question styles */
-.faq-item h2 {
-    font-family: 'Play', sans-serif;
-    font-size: 20px; /* Slightly larger font size for questions */
-    margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Adding a slight text shadow */
-    cursor: pointer; /* Add cursor pointer for interactivity */
-    transition: transform 0.3s ease; /* Smooth transition for transform */
+.accordion {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Answer styles */
-.faq-item p {
-    font-family: 'Play', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #ddd;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Adding a slight text shadow */
-    display: none; /* Hide answers by default */
-    padding: 10px 0; /* Add padding for better readability */
+span {
+    font-size: 1.2rem;
 }
 
-/* Adding hover effect for FAQ items */
-.faq-item:hover h2 {
-    transform: scale(1.05); /* Slightly enlarge the question on hover */
+.accordion-item {
+    border-bottom: 1px solid #ddd;
 }
 
-/* Animation for FAQ items */
-.faq-item {
-    animation: slideDown 0.5s ease-out;
+.accordion-button {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    color: #333;
+    font-size: 1.2rem;
 }
 
-/
+.accordion-button:hover {
+    background-color: #e0e0e0;
+}
+
+.accordion-button:focus {
+    background-color: #ddd;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.accordion-content p {
+    margin: 0;
+    padding: 15px;
+    font-size: 1.1rem;
+    text-align: left;
+    color: #333;
+}
+
+.icon {
+    font-size: 1.6rem;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.accordion-button.active .icon {
+    transform: rotate(45deg);
+    color: #dc3545;
+}
